@@ -1,6 +1,6 @@
 # Develop your naturalist superpowers with Observable Notebooks and iNaturalist
 
-We're going to level up your knowledge of what animals you might see in an area at a particular time of year - a skill every naturalist* strives for -  using technology! Using [iNaturalist](https://www.inaturalist.org/) and [Observable Notebooks](https://beta.observablehq.com/) we're going to prototype seasonality graphs for particular species in an area and automatically create a guide to what animals you might see in each month.**
+We're going to level up your knowledge of what animals you might see in an area at a particular time of year - a skill every naturalist* strives for -  using technology! Using [iNaturalist](https://www.inaturalist.org/) and [Observable Notebooks](https://beta.observablehq.com/) we're going to prototype seasonality graphs for particular species in an area, and automatically create a guide to what animals you might see in each month.
 
 **(a Naturalist is someone who likes learning about nature, not someone who's a fan of being naked, that's a '[Naturist](https://en.wikipedia.org/wiki/Naturism)'... different thing!)*
 
@@ -8,19 +8,19 @@ We're going to level up your knowledge of what animals you might see in an area 
 
 One of my favourite things to do is going rockpooling, or as we call it over here in California, 'tidepooling'. Amounting to the same thing, it's going to a beach that has rocks where the tide covers then uncovers little pools of water at different times of the day. All sorts of fun creatures and life can be found in this ['rocky intertidal habitat'](https://en.wikipedia.org/wiki/Intertidal_ecology)
 
-A particularly exciting creature that lives in this habitat is the [Nudibranch](https://www.inaturalist.org/taxa/47113-Nudibranchia), a type of super colourful 'sea slug'. There are over 3000 species of Nudibranch worldwide (The word "nudibranch" comes from the Latin **nudus**, naked, and the Greek **βρανχια / brankhia**, *gills*.)
+A particularly exciting creature that lives here is the [Nudibranch](https://www.inaturalist.org/taxa/47113-Nudibranchia), a type of super colourful 'sea slug'. There are over 3000 species of Nudibranch worldwide (The word "nudibranch" comes from the Latin **nudus**, naked, and the Greek **βρανχια / brankhia**, *gills*.)
 
 ![photo of some nudibranches to illustrate diversity](https://raw.githubusercontent.com/natbat/nudibranchs-by-season/master/nudibranchs.png "Nudibranchs, photo credit: on iNaturalist taxon page")
 
-They ar however quite tricky to find! Even though they are often brightly coloured and interestingly shaped some of them are very small, and in our part of the world in the Bay Area in California their appearance in our rockpools is seasonal. We see them more often in Summer months, despite the not-as-low tides as in our Winter and Spring seasons.
+They are however quite tricky to find! Even though they are often brightly coloured and interestingly shaped, some of them are very small, and in our part of the world in the Bay Area in California their appearance in our rockpools is seasonal. We see them more often in Summer months, despite the not-as-low tides as in our Winter and Spring seasons.
 
-My favourite place to go tidepooling here is [Pillar Point](http://limpets.org/site/pillar-point/) in Half Moon bay (at other times of the year more famously known for the surf competition ['Mavericks'](https://en.wikipedia.org/wiki/Mavericks,_California). The rockpools there are rich in species diversity, of varied types and water-coverage habitat zones as well as being relatively accessible.
+My favourite place to go tidepooling here is [Pillar Point](http://limpets.org/site/pillar-point/) in Half Moon bay (at other times of the year more famously known for the surf competition ['Mavericks'](https://en.wikipedia.org/wiki/Mavericks,_California)). The rockpools there are rich in species diversity, of varied types and water-coverage habitat zones as well as being relatively accessible.
 
 ![photo of Pillar Point tidepools](https://raw.githubusercontent.com/natbat/nudibranchs-by-season/master/pillar-point.jpg "Pillar Point Tide, photo credit: Natalie Downe")
 
 I was rockpooling at Pillar Point recently with my parents and we talked to a lady who remarked that she hadn't seen any Nudibranchs on her visit this time. I realised that having an idea of what species to find where, and at what time of year is one of the many superpower goals of every budding Naturalist. 
 
-Using technology and the croudsourced species observations of the iNaturalist community we can shortcut our way to this superpower.
+Using technology and the croudsourced species observations of the iNaturalist community we can shortcut our way to this superpower!
 
 ## Finding nearby animals with iNaturalist
 
@@ -28,33 +28,33 @@ We're going to be getting our information about what animals you can see in Pill
 
 I've been [using iNaturalist](https://www.inaturalist.org/people/natbat) for over two years to record and identify plants and animals that I've found in the outdoors. I use their iPhone app to upload my pictures, which then uses machine learning algorithms to make an initial guess at what it is I've seen. The community is really active, and I often find someone else has verified or updated my species guess pretty soon after posting. 
 
-This process is great because once an observation has been identified by at least two people it becomes 'verified' and is considered research grade. Research grade observations get exported and used by scientists as well as being indexed by the [Global Biodiversity Information Facility, GBIF](https://www.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7).
+This process is great because once an observation has been identified by at least two people it becomes 'verified' and is considered research grade. Research grade observations get exported and used by scientists, as well as being indexed by the [Global Biodiversity Information Facility, GBIF](https://www.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7).
 
 ![screenshot of GBIF map](https://raw.githubusercontent.com/natbat/nudibranchs-by-season/master/gbif-inat.png "Global Biodiversity Information Facility map of iNaturalist data - photo credit: GBIF & Open Street Map")
 
-[iNaturalist has a great API](https://api.inaturalist.org/v1/docs/) and API explorer, which makes interacting and prototyping using iNaturalist data really fun. For example, if you go to the API explorer and expand the *\`Observations : Search and fetch\`* section and then the *\`GET /observations\`* API, you get a [selection of input boxes](https://api.inaturalist.org/v1/docs/#!/Observations/get_observations) that allow you to play with options that you can then pass to the API when you click the 'Try it out' button at the bottom.
+[iNaturalist has a great API](https://api.inaturalist.org/v1/docs/) and API explorer, which makes interacting and prototyping using iNaturalist data really fun. For example, if you go to the API explorer and expand the `Observations : Search and fetch` section and then the `GET /observations` API, you get a [selection of input boxes](https://api.inaturalist.org/v1/docs/#!/Observations/get_observations) that allow you to play with options that you can then pass to the API when you click the '`Try it out`' button.
 
 ![screenshot of iNaturalist API explorer](https://raw.githubusercontent.com/natbat/nudibranchs-by-season/master/api-explore.png "iNaturalist API explorer")
 
 You'll then get a URL that looks a bit like https://api.inaturalist.org/v1/observations?captive=false&geo=true&verifiable=true&taxon_id=47113&lat=37.495461&lng=-122.499584&radius=5&order=desc&order_by=created_at which you can call and interrrogate using a programming language of your choice.
 
-If you would like to see an all-JavaScript application that uses ther iNaturalist API, take a look at [OwlsNearMe.com](https://www.owlsnearme.com/) which [Simon and I built](https://github.com/simonw/owlsnearme) in a weekend earlier this year. It gets your location and shows you all iNaturalist observations of owls near you and lists which species you are likely to see (not adjusted for season).
+If you would like to see an all-JavaScript application that uses the iNaturalist API, take a look at [OwlsNearMe.com](https://www.owlsnearme.com/) which [Simon and I built](https://github.com/simonw/owlsnearme) one weekend earlier this year. It gets your location and shows you all iNaturalist observations of owls near you and lists which species you are likely to see (not adjusted for season).
 
 ## Rapid development using Observable Notebooks
 
-We're going to be using [Observable Notebooks](https://beta.observablehq.com/) to prototype our examples pulling data down from iNaturalist. I really like using visual notebooks like Observable, they are great for learning and building things quickly. You may be familiar with [Jupyter notebooks](https://jupyter.org/) for Python which is similar but takes a bit of setup to get going - I often use these for Python prototyping. Observable is amazing for querying and visualising data with JavaScript and since it is a hosted product it doesn't require any setup at all.
+We're going to be using [Observable Notebooks](https://beta.observablehq.com/) to prototype our examples, pulling data down from iNaturalist. I really like using visual notebooks like Observable, they are great for learning and building things quickly. You may be familiar with [Jupyter notebooks](https://jupyter.org/) for Python which is similar but takes a bit of setup to get going - I often use these for prototyping too. Observable is amazing for querying and visualising data with JavaScript and since it is a hosted product it doesn't require any setup at all.
 
 You can follow along and play with [this example on my Observable notebook](https://beta.observablehq.com/d/7f2b9a8c670e44e6). If you create an account there you can fork my notebook and create your own version of this example. 
 
-Each notebook consists of a page with a column of 'cells', similar to what you get in a spreadsheet. A cell can contain [markdown text](https://daringfireball.net/projects/markdown/syntax) or JavaScript code and the output of evaluating the cell appears above the code that generated it. There are lots of tutorials out there on Observable Notebooks, I like this [code introduction](https://beta.observablehq.com/@mbostock/introduction-to-code) one from Observable (and D3) creator Mike Bostock.
+Each 'notebook' consists of a page with a column of 'cells', similar to what you get in a spreadsheet. A cell can contain [markdown text](https://daringfireball.net/projects/markdown/syntax) or JavaScript code and the output of evaluating the cell appears above the code that generated it. There are lots of tutorials out there on Observable Notebooks, I like this [code introduction](https://beta.observablehq.com/@mbostock/introduction-to-code) one from Observable (and D3) creator Mike Bostock.
 
 ## Developing your Naturalist superpowers
 
-If you can have an idea of what plants and critters you might see in a place at the time you visit, you can hone in on what you want to study and train your Naturalist eye to better identify the life around you.
+If you have an idea of what plants and critters you might see in a place at the time you visit, you can hone in on what you want to study and train your Naturalist eye to better identify the life around you.
 
-We care about wildlife we can see at Pillar Point, so we need a way of letting the iNaturalist API know which area we are interested in.
+For our example, we care about wildlife we can see at Pillar Point, so we need a way of letting the iNaturalist API know which area we are interested in.
 
-We could use a latitide, longitude and radius for this but a rectangular bounding box is a better shape for the reef. We can use this tool to draw the area we want to search within: https://boundingbox.klokantech.com/
+We could use a latitide, longitude and radius for this, but a rectangular bounding box is a better shape for the reef. We can use this tool to draw the area we want to search within: [boundingbox.klokantech.com/](https://boundingbox.klokantech.com/)
 
 ![screenshot of Bounding box by Klokantech](https://raw.githubusercontent.com/natbat/nudibranchs-by-season/master/bounding-box.png "Pillar Point bounding box - Bounding box by Klokantech")
 
