@@ -308,4 +308,18 @@ Lastly I strongly encourage you to get outside on a low tide to explore your loc
 
 Here is a [great introduction video to tidepooling / rockpooling](https://youtu.be/LQF1Fw0qK8s), by Rebecca Johnson and Alison Young from the California Academy of Sciences.
 
+# Article by Natalie Downe
+**[Natalie Downe](http://blog.natbat.net/) is a Brit living in the Californian sunshine. Her professional experience spans both software engineering and natural history.**
+
+After getting a degree in Computer Information Systems from Bath University, she worked with the British Trust for Conservation Volunteers and the Devon Wildlife Trust, then as frontend engineer for Torchbox and Clearleft. 
+
+Then, whilst travelling the world with her husband Simon Willison, together they [created Lanyrd](http://blog.natbat.net/post/61658401806/lanyrd-from-idea-to-exit-the-story-of-our) which they ran for 3 years and sold to Eventbrite, transitioning to Director of Frontend Engineering. In moving herself, her family and her team over to San Francisco, California, Natalie learned more than she wanted to about government buracracy. 
+
+Nowadays Natalie works for herself, occasionally doing public speaking on CSS and Bats (though not at the same time), volunteering for the California Bat Working group, the Marine Mammal Center and assisting the California Acadamy of Science with their tidepool monitoring. 
+
+On Sunny days Natalie can be found hiking around the bay area with her husband and her dog [Cleo](https://twitter.com/cleopaws). On rainy days she mostly eats chocolate.
+
+
+
+
 
