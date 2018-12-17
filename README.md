@@ -85,17 +85,17 @@ As API parameters these look like this:
 
 These parameters in this format can be used for most of the iNaturalist API methods.
 
-### Nudibranch seasonality in Pillar point
+## Nudibranch seasonality in Pillar point
 
-We can use the iNaturalist [observation_histogram](http://api.inaturalist.org/v1/observations/histogram?taxon_id=47113&nelat=37.499811&nelng=-122.492738&swlat=37.492805&swlng=-122.50542&date_field=observed&interval=week_of_year) API to get a count of nudibranch observations per week-of-year across all time within our Pillar Point bounding box.
+We can use the iNaturalist **[observation_histogram](http://api.inaturalist.org/v1/observations/histogram?taxon_id=47113&nelat=37.499811&nelng=-122.492738&swlat=37.492805&swlng=-122.50542&date_field=observed&interval=week_of_year)** API to get a count of nudibranch observations per week-of-year across all time and within our Pillar Point bounding box.
 
-In addition to the geographic parameters that we just worked out, we are also sending the [taxon_id of 47113](https://www.inaturalist.org/taxa/47113-Nudibranchia), which is iNaturalists internal number associated with the Nudibranch taxon. By using this we can get all species which are under the parent 'Order Nudibranchia'. 
+In addition to the geographic parameters that we just worked out, we are also sending the [taxon_id of 47113](https://www.inaturalist.org/taxa/47113-Nudibranchia), which is iNaturalists internal number associated with the Nudibranch taxon. By using this we can get all species which are under the parent '`Order Nudibranchia`'. 
 
 Another useful piece of naturalist knowledge is understanding the biological classification scheme of [Taxanomic Rank](https://en.wikipedia.org/wiki/Taxonomic_rank) - roughly, when a species has a latin name of two words eg '[Glaucus Atlanticus](https://en.wikipedia.org/wiki/Glaucus_atlanticus)' the first latin word is the 'Genus' like a family name **'Glaucus'**, and the second word identifies that particular species, like a given name **'Atlanticus'**. 
 
 The two latin words together indicate a specific species, the term we use colloquially to refer to a type of animal often differs wildly region to region, and sometimes the same common name in two countries can refer to two different species. The common names for the Glaucus Atlanticus (which incidentally is my favourite sea slug) include: sea swallow, blue angel, blue glaucus, blue dragon, blue sea slug and blue ocean slug! Because this gets super confusing, Scientists like using this latin name format instead.
 
-The following piece of code asks the [iNaturalist Histogram API](https://api.inaturalist.org/v1/docs/#!/Observations/get_observations_histogram) to get back per-week counts for verified observations of Nudibranchs within our Pillar point bounding box:
+The following piece of code asks the [iNaturalist Histogram API](https://api.inaturalist.org/v1/docs/#!/Observations/get_observations_histogram) to return per-week counts for verified observations of Nudibranchs within our Pillar point bounding box:
 
     pillar_point_counts_per_week = fetch(
       "https://api.inaturalist.org/v1/observations/histogram?taxon_id=47113&nelat=37.499811&nelng=-122.492738&swlat=37.492805&swlng=-122.50542&date_field=observed&interval=week_of_year&verifiable=true"
@@ -163,9 +163,9 @@ We can then plug this into Vega-Lite to draw us a graph:
 
 ![Graph showing Nudibranch observations per week in Pillar Point graph](https://raw.githubusercontent.com/natbat/nudibranchs-by-season/master/per-wk-graph.png "Graph showing Nudibranch observations per week in Pillar Point")
 
-It's worth noting that we have a lot of observations of Nudibranches particularly at Pillar point due in no small part to the [intertidal monitoring research](https://www.inaturalist.org/projects/intertidal-biodiversity-survey-at-pillar-point) that [Alison Young](https://www.inaturalist.org/people/kestrel) and [Rebecca Johnson](https://www.inaturalist.org/people/rebeccafay) facilitate for the California Achademy of Sciences. 
+It's worth noting that we have a lot of observations of Nudibranchs particularly at Pillar point due in no small part to the [intertidal monitoring research](https://www.inaturalist.org/projects/intertidal-biodiversity-survey-at-pillar-point) that [Alison Young](https://www.inaturalist.org/people/kestrel) and [Rebecca Johnson](https://www.inaturalist.org/people/rebeccafay) facilitate for the California Achademy of Sciences. 
 
-So, what if we want to look for the seasonality of observations of a particular species of adorable sea slug? We want our interface to have a select box with a list of all the species you might find at any time of year. We can do this using the **[species_counts](https://api.inaturalist.org/v1/docs/#!/Observations/get_observations_species_counts)** iNaturalist API to create us an object with the iNaturalist species ID and common & latin names.
+So, what if we want to look for the seasonality of observations of a particular species of adorable sea slug? We want our interface to have a select box with a list of all the species you might find at any time of year. We can do this using the **[species_counts](https://api.inaturalist.org/v1/docs/#!/Observations/get_observations_species_counts)** API to create us an object with the iNaturalist species ID and common & latin names.
 
     pillar_point_nudibranches = {
       let api_results = await fetch(
@@ -180,7 +180,7 @@ So, what if we want to look for the seasonality of observations of a particular 
       return species_list
     }
 
-We can create an interactive select box by importing code from [Jeremy Ashkanas' notebook](https://beta.observablehq.com/@jashkenas/inputs): add `import {select} from "@jashkenas/inputs"` to a cell anywhere in our notebook. Observable is magic: like a spreadsheet, the order of the cells doesn't matter - if one cell is referenced by any other cell then when that cell updates all the other cells refresh themselves.
+We can create an interactive select box by importing code from [Jeremy Ashkanas' Observable Notebook](https://beta.observablehq.com/@jashkenas/inputs): add `import {select} from "@jashkenas/inputs"` to a cell anywhere in our notebook. Observable is magic: like a spreadsheet, the order of the cells doesn't matter - if one cell is referenced by any other cell then when that cell updates all the other cells refresh themselves. You can also import and reference one notebook from another!
 
     viewof select_species = select({
         title: "Which Nudibranch do you want to see seasonality for?",
@@ -304,7 +304,7 @@ Play with it yourself in this [Observable Notebook](https://beta.observablehq.co
 
 I hope by [playing with these examples](https://beta.observablehq.com/d/7f2b9a8c670e44e6) you have an idea of how powerful it can be to prototype using [Observable Notebooks](https://beta.observablehq.com/) and how you can use the incredible crowdsourced community data and APIs from iNaturalist to augment your naturalist skills and impress your friends with your new 'knowledge of nature' superpower.
 
-Lastly I strongly encourage you to get outside on a low tide to explore your local rocky intertidal habitat and all the amazing critters that live there.
+Lastly I strongly encourage you to get outside on a low tide to explore your local rocky intertidal habitat, and all the amazing critters that live there.
 
 Here is a [great introduction video to tidepooling / rockpooling](https://youtu.be/LQF1Fw0qK8s), by Rebecca Johnson and Alison Young from the California Academy of Sciences.
 
